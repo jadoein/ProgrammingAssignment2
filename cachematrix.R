@@ -17,11 +17,16 @@
 #getinv() :- return value of inverse inv
 #-----------------------------------
 makeCacheMatrix <- function(x = matrix()) {
+#stop the process if matrix is not square
   if (nrow(x) != ncol(x)) {
     return(print ("Dimensions of input matrix are NOK"))
   }
 	inv <- NULL
 	set <-function(y) {
+#stop the process if matrix is not square
+	  if (nrow(y) != ncol(y)) {
+	    return(print ("Dimensions of input matrix are NOK"))
+	  }
 		x   <<- y
 		inv <<- NULL
 	}
